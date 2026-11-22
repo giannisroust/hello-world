@@ -1,0 +1,11 @@
+# Python cache files
+__pycache__/
+
+# macOS folder metadata
+.DS_Store
+
+# Virtual environments (Block D)
+.venv/
+
+# Secrets: passwords, API keys (later chapters)
+.env
