@@ -7,7 +7,7 @@
 - For money, use `Decimal('0.1')` from the `decimal` module (exact).
 
 
-## Ch03: try / except (handling errors)
+## Ch04: try / except (handling errors)
 
 - `try:` runs code that *might* fail; `except SomeError:` runs only if that error happens.
   Without it, an error crashes the program with a traceback.
@@ -25,3 +25,24 @@
     ```
 - Optional extras (later): `else:` runs if no error happened,
   `finally:` always runs (e.g. to close a file).
+
+## Lists: negative indexes
+
+- `ages[-1]` = last item, `ages[-2]` = second to last, etc.
+  No need to know the list's length.
+- `ages[0]` = first item.
+- Square brackets `[ ]` = get an item; round brackets `( )` = call a function.
+  `ages(-1)` → TypeError: 'list' object is not callable.
+
+## assert (sanity checks)
+
+- `assert condition` → if True, nothing happens; if False, the program stops
+  with `AssertionError`.
+    ```python
+    ages.sort()
+    assert ages[0] <= ages[-1]  # sorted list: first <= last
+    ```
+- Use it to catch **my own bugs** early ("this should never happen").
+- Don't use it to check user input; use `if` or `try/except` for that.
+  (Python can be run with asserts switched off.)
+- pytest tests are basically asserts: `assert decide_winner("r", "s") == "win"`
